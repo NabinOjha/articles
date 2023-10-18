@@ -1,0 +1,15 @@
+body{
+  background: $color-gray;
+}
+
+@each $key, $value in $colors {
+  .#{$key}-text {
+    color: $value;
+  }
+}
+
+@each $key, $value in $font-weights{
+  .font-#{$key} {
+    font-weight: $value;
+  }
+}
