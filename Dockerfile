@@ -10,7 +10,3 @@ ADD Gemfile Gemfile.lock /app/
 RUN bundle install
 
 ADD . /app
-
-EXPOSE 3000
-
-CMD ["rails", "server", "-b", "0.0.0.0"]

@@ -1,5 +1,8 @@
-div.flex.pt-100.w-full.justify-between
-  .logo-section
-    p this is the logo section
-  .user-section 
-    p = current_user.email
+div.flex.my-5.w-full.justify-between
+  div class="logo-section w-16 h-16 hover:cursor-pointer"
+    = image_tag "logo/logo.svg", alt: "Article Logo"
+  .user-section
+    - if current_user.present?
+      p.text-blue-500 = current_user&.email
+    - else
+      = link_to "Sign In", new_user_session_path
