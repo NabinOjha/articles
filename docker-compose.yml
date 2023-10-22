@@ -3,9 +3,9 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD = ${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=password
     volumes:
-      - medium_app_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
     networks:
       - medium_network
   web:
@@ -21,6 +21,6 @@ services:
     networks:
       - medium_network
 volumes:
-  medium_app_data:
+  pg_data:
 networks:
   medium_network:

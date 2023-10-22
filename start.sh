@@ -1,10 +1,7 @@
 #!/bin/bash
 rm -f tmp/pids/server.pid
-useradd -m -p '*' nabinojha
-chown -R nabinojha:nabinojha .
 bundle
-rails db:create
-rails db:migrate
-rails db:seed
-rails assets:clobber
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails db:seed
 bundle exec foreman start -f Procfile.dev 
