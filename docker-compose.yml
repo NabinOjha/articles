@@ -10,7 +10,8 @@ services:
       - medium_network
   web:
     build: .
-    env_file: .env
+    environment:
+      - RAILS_SERVE_STATIC_FILES=true
     command: ["./start.sh"]
     volumes:
       - .:/app
