@@ -6,13 +6,13 @@ ADD config/nginx.conf /etc/nginx/sites-enabled/depot.conf
 USER app
 RUN mkdir /home/app/depot
 WORKDIR /home/app/depot
-ENV RAILS_ENV=production
-ENV BUNDLE_WITHOUT="development test"
+ENV RAILS_ENV=development
+# ENV BUNDLE_WITHOUT="development test"
 COPY --chown=app:app Gemfile Gemfile.lock ./
 RUN bundle install
 COPY --chown=app:app . .
-RUN SECRET_KEY_BASE=`bin/rails secret` \
-bin/rails assets:precompile
+# RUN SECRET_KEY_BASE=`bin/rails secret` \
+# bin/rails assets:precompile
 USER root
 RUN apt update && apt install vim -y
 CMD ["/sbin/my_init"]
