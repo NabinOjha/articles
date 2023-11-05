@@ -1,16 +1,8 @@
-# Dockerfile.rails
-FROM ruby:3.2.0
-
-RUN apt-get update && apt-get install -y nodejs
-
+FROM ruby:3.1.1
+RUN mkdir /app 
 WORKDIR /app
-
-ADD Gemfile Gemfile.lock /app/
-
+ENV RAILS_ENV=development
+COPY Gemfile Gemfile.lock ./
 RUN bundle install
-
-ADD . /app
-
-EXPOSE 3000
-
-CMD ["rails", "server", "-b", "0.0.0.0"]
+COPY . .
+CMD ["rails", "server"]

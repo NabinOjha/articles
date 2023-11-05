@@ -90,4 +90,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  # so that sass-rails is not used which uses outdated compressor
+  config.assets.css_compressor = nil
 end

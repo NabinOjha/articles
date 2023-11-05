@@ -1,0 +1,15 @@
+$colors: (
+  primary: #3498db,
+  secondary: #e74c3c,
+  accent: #f39c12
+);
+$color-gray: #F9F8FC;
+$font-weights: (regular: 400, medium: 500, bold: 700);
+
+
+
+@each $key, $value in $colors {
+  .#{$key}-text {
+    color: $value;
+  }
+}

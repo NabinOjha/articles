@@ -1,0 +1,23 @@
+$fonts-sizes: (
+  sm: 12px,
+  normal: 16px,
+  md: 24px,
+  lg: 32px
+);
+
+@each $key,$value in $fonts-sizes {
+  .font-#{key}{
+    font-size: $value;
+  }
+}
+
+@each $key, $value in $font-weights{
+  .font-#{$key} {
+    font-weight: $value;
+  }
+}
+
+body{
+  font-size: 16px;
+  font-weight: 500;
+}
