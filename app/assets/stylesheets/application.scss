@@ -13,6 +13,7 @@
  *= require_self
  */
 
+//  base should always first -> to make all config/variables available to other files
 @import "base/main";
 @import "components/main";
 @import "layouts/main";

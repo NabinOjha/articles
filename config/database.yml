@@ -89,7 +89,7 @@ test:
 production:
   <<: *default
   database: sayog_production
-  username: nil
-  password: nil
+  username:  <%= Rails.application.credentials.postgres_user %>
+  password: <%= Rails.application.credentials.postgres_password %>
   host: db
   port: 5432

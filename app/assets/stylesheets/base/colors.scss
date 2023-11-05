@@ -5,3 +5,11 @@ $colors: (
 );
 $color-gray: #F9F8FC;
 $font-weights: (regular: 400, medium: 500, bold: 700);
+
+
+
+@each $key, $value in $colors {
+  .#{$key}-text {
+    color: $value;
+  }
+}
